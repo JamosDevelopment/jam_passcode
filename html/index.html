@@ -1,0 +1,261 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .pannello {
+            width: 40%;
+            height: 80%;
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        .tasti {
+            background-image:    url("https://cdn.wallpapersafari.com/93/17/nkPK4I.jpg");
+            background-size:     cover;
+            background-repeat:   no-repeat;
+            background-position: center center;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        .tasti a {
+            display: inline-block;
+            font-family: monospace;
+            font-weight: bold;
+            user-select: none;
+            font-size: 36px;
+            border-radius: 100%;
+            padding-top: 1%;
+            padding-left: 1%;
+            padding-right: 1%;
+            padding-bottom: 1%;
+            margin-left: 19%;
+            margin-top: 22%;
+        }
+
+    </style>
+</head>
+    <body>
+        <div class="pannello">
+            <div class="tasti">
+                <a id="1">A1</a>
+                <a id="2">A2</a>
+                <a id="3">A3</a>
+                <br>
+                <a id="4">A4</a>
+                <a id="5">A5</a>
+                <a id="6">A6</a>
+                <br>
+                <a id="7">A7</a>
+                <a id="8">A8</a>
+                <a id="9">A9</a>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        $(function () {
+
+            var uno = false;
+            var due = false;
+            var tre = false;
+            var quattro = false;
+            var cinque = false;
+            var sei = false;
+            var sette = false;
+            var otto = false;
+            var nove = false;
+
+            var unoa = false;
+            var duea = false;
+            var trea = false;
+            var quattroa = false;
+            var cinquea = false;
+            var seia = false;
+            var settea = false;
+            var ottoa = false;
+            var novea = false;
+
+            window.addEventListener('message', function (event) {
+
+                if (event.data.menu == true) {
+                    $(".pannello").css("display","block");
+                    $("#1").css("background-color","white");
+                    $("#2").css("background-color","white");
+                    $("#3").css("background-color","white");
+                    $("#4").css("background-color","white");
+                    $("#5").css("background-color","white");
+                    $("#6").css("background-color","white");
+                    $("#7").css("background-color","white");
+                    $("#8").css("background-color","white");
+                    $("#9").css("background-color","white");
+                    unoa = false;
+                    duea = false;
+                    trea = false;
+                    quattroa = false;
+                    cinquea = false;
+                    seia = false;
+                    settea = false;
+                    ottoa = false;
+                    novea = false;
+                } else {
+                    $(".pannello").css("display","none");
+                };
+
+                if (event.data.code !== null) {
+                    var code = JSON.parse(event.data.code);
+                    var jsonPretty = JSON.stringify(JSON.parse(event.data.code),null,2); 
+                    console.log(jsonPretty);
+
+                    if (code.one !== null) {
+                        uno = code.one
+                    }
+                    if (code.two !== null) {
+                        due = code.two
+                    }
+                    if (code.three !== null) {
+                        tre = code.three
+                    }
+                    if (code.four !== null) {
+                        quattro = code.four
+                    }
+                    if (code.five !== null) {
+                        cinque = code.five
+                    }
+                    if (code.six !== null) {
+                        sei = code.six
+                    }
+                    if (code.seven !== null) {
+                        sette = code.seven
+                    }
+                    if (code.eight !== null) {
+                        otto = code.eight
+                    }
+                    if (code.nine !== null) {
+                        nove = code.nine
+                    }
+
+                    
+                }
+            });
+
+            $("#1").click(function() {
+                if (unoa !== true) {
+                    unoa = true;
+                    $("#1").css("background-color","green");
+                } else {
+                    unoa = false;
+                    $("#1").css("background-color","white");
+                }
+            });
+
+            $("#2").click(function() {
+                if (duea !== true) {
+                    duea = true;
+                    $("#2").css("background-color","green");
+                } else {
+                    duea = false;
+                    $("#2").css("background-color","white");
+                }
+            });
+
+            $("#3").click(function() {
+                if (trea !== true) {
+                    trea = true;
+                    $("#3").css("background-color","green");
+                } else {
+                    trea = false;
+                    $("#3").css("background-color","white");
+                }
+            });
+
+            $("#4").click(function() {
+                if (quattroa !== true) {
+                    quattroa = true;
+                    $("#4").css("background-color","green");
+                } else {
+                    quattroa = false;
+                    $("#4").css("background-color","white");
+                }
+            });
+
+            $("#5").click(function() {
+                if (cinquea !== true) {
+                    cinquea = true;
+                    $("#5").css("background-color","green");
+                } else {
+                    cinquea = false;
+                    $("#5").css("background-color","white");
+                }
+            });
+
+            $("#6").click(function() {
+                if (seia !== true) {
+                    seia = true;
+                    $("#6").css("background-color","green");
+                } else {
+                    seia = false;
+                    $("#6").css("background-color","white");
+                }
+            });
+
+            $("#7").click(function() {
+                if (settea !== true) {
+                    settea = true;
+                    $("#7").css("background-color","green");
+                } else {
+                    settea = false;
+                    $("#7").css("background-color","white");
+                }
+            });
+
+            $("#8").click(function() {
+                if (ottoa !== true) {
+                    ottoa = true;
+                    $("#8").css("background-color","green");
+                } else {
+                    ottoa = false;
+                    $("#8").css("background-color","white");
+                }
+            });
+
+            $("#9").click(function() {
+                if (novea !== true) {
+                    novea = true;
+                    $("#9").css("background-color","green");
+                } else {
+                    novea = false;
+                    $("#9").css("background-color","white");
+                }
+            });
+
+            document.addEventListener("keydown", function(event) {
+                if (event.keyCode === 13) {
+                    // console.log("si " + unoa + duea + trea + quattroa + cinquea + seia + settea + ottoa + novea);
+                    // console.log("sium " + uno + due + tre + quattro + cinque + sei + sette + otto + nove);
+                    if (uno == unoa && due == duea && tre == trea && quattro == quattroa && cinque == cinquea && sei == seia && sette == settea && otto == ottoa && nove == novea) {
+                        $.post('http://jam_passcode/result', JSON.stringify({
+                            result: true
+                        }));
+                    } else if (unoa == false && duea == false && trea == false && quattroa == false && cinquea == false && seia == false && settea == false && ottoa == false && novea == false) {
+                        $.post('http://jam_passcode/result', JSON.stringify({
+                            result: "vuoto"
+                        }));
+                    } else {
+                        $.post('http://jam_passcode/result', JSON.stringify({
+                            result: false
+                        }));
+                    }
+                }
+            });
+
+        });
+    </script>
+</html>
